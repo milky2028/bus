@@ -43,7 +43,7 @@
     }
     
     getPrediction();
-    setTimeout(() => {
+    setInterval(() => {
         getPrediction();
     }, 15000);
 })();
