@@ -21,9 +21,9 @@ body {
   h1 {
     margin: 0;
     font-size: 19rem;
-    align-self: start;
+    /* align-self: start; */
     text-align: center;
-    /* text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow; */
+    text-shadow: -1px 0 yellow, 15px 0 yellow;
   }
   
   h2 {
