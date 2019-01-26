@@ -1,0 +1,8 @@
+{
+    "name": "Get On the Bus",
+    "short_name": "Bus Ma Dude",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#000000"
+}
