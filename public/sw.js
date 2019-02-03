@@ -25,7 +25,15 @@ self.__precacheManifest = [
   },
   {
     "url": "app.js",
-    "revision": "12a893147a4fc958d77673c96b1177a5"
+    "revision": "781c98723f062934790f4fdf7d7fd7ba"
+  },
+  {
+    "url": "img/icons/192x192.png",
+    "revision": "bfa79be9d5478fce08790433a4d6d680"
+  },
+  {
+    "url": "img/icons/512x512.png",
+    "revision": "1f8b48ffe2446714268979b877290220"
   },
   {
     "url": "index.html",
@@ -33,7 +41,7 @@ self.__precacheManifest = [
   },
   {
     "url": "manifest.json",
-    "revision": "be1e0816c8ca4471e2c716635b932b3e"
+    "revision": "dbbac57df1de660adf63a3bc5eb749c3"
   },
   {
     "url": "styles/app.css",
