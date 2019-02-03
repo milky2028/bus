@@ -40,18 +40,21 @@
         })
         .then((res) => res.json())
         .then((json) => {
-            console.log(json);
-            const prediction = json['bustime-response'].prd[0];
-            const minutesAgo = convertDateToMinutes(new Date() - parseDate(prediction.tmstmp));
-            const bigMinute = /due/i.test(prediction.prdctdn) ? 'ma dude' : minutesVsMinute(+prediction.prdctdn);
-            writeToDom('#time', prediction.prdctdn, true);
-            writeToDom('#timeChecked', minutesAgo, false);
-            writeToDom('#minutes', minutesVsMinute(+minutesAgo), false);
-            writeToDom('#bigMinute', bigMinute, false);
-            unHide('#checked');
-            unHide('#bigMinute');
-            unHide('#time');
             hide('.loader');
+            if (json['bustime-response'].error) {
+                writeToDom('#time', json['bustime-response'].error[0].msg, true);
+            } else {
+                const prediction = json['bustime-response'].prd[0];
+                const minutesAgo = convertDateToMinutes(new Date() - parseDate(prediction.tmstmp));
+                const bigMinute = /due/i.test(prediction.prdctdn) ? 'ma dude' : minutesVsMinute(+prediction.prdctdn);
+                writeToDom('#time', prediction.prdctdn, true);
+                writeToDom('#timeChecked', minutesAgo, false);
+                writeToDom('#minutes', minutesVsMinute(+minutesAgo), false);
+                writeToDom('#bigMinute', bigMinute, false);
+                unHide('#checked');
+                unHide('#bigMinute');
+                unHide('#time');
+            }
         })
         .catch((e) => console.error(e));
 
