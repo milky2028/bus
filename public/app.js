@@ -7,6 +7,16 @@
         el.innerHTML = value;
     }
 
+    const unHide = (element) => {
+        const el = document.querySelector(element);
+        el.hidden = false;
+    }
+
+    const hide = (element) => {
+        const el = document.querySelector(element);
+        el.hidden = true;
+    }
+
     const parseDate = (date) => {
         const reg = /(\d{4})(\d{2})(\d{2}) (\d{2}):(\d{2})/i;
         const [, year, month, day, hour, minute] = reg.exec(date);
@@ -38,8 +48,13 @@
             writeToDom('#timeChecked', minutesAgo, false);
             writeToDom('#minutes', minutesVsMinute(+minutesAgo), false);
             writeToDom('#bigMinute', bigMinute, false);
+            unHide('#checked');
+            unHide('#bigMinute');
+            unHide('#time');
+            hide('.loader');
         })
         .catch((e) => console.error(e));
+
     }
     
     getPrediction();
