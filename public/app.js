@@ -40,6 +40,7 @@
         })
         .then((res) => res.json())
         .then((json) => {
+            console.log(json);
             hide('.loader');
             if (json['bustime-response'].error) {
                 writeToDom('#time', json['bustime-response'].error[0].msg, true);
