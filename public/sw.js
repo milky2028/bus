@@ -25,7 +25,7 @@ self.__precacheManifest = [
   },
   {
     "url": "app.js",
-    "revision": "baff94a75cf67b202cdea676df75e7fc"
+    "revision": "f48de6398a8b158ff26abf8ffc82ce54"
   },
   {
     "url": "img/icons/192x192.png",
