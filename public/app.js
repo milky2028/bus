@@ -1,8 +1,12 @@
 (function () {
     const writeToDom = (element, value, isTime) => {
         const el = document.querySelector(element);
+        console.log(value.length);
         if (isTime && isNaN(+value)) {
-            time.style.fontSize = '10rem';
+            el.style.fontSize = '10rem';
+        }
+        if (value.length > 5) {
+            el.style.fontSize = '7`rem';
         }
         el.innerHTML = value;
     }
@@ -44,6 +48,7 @@
             hide('.loader');
             if (json['bustime-response'].error) {
                 writeToDom('#time', json['bustime-response'].error[0].msg, true);
+                unHide('#time');
             } else {
                 const prediction = json['bustime-response'].prd[0];
                 const minutesAgo = convertDateToMinutes(new Date() - parseDate(prediction.tmstmp));
