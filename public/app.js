@@ -1,4 +1,5 @@
 (function () {
+    // sure
     const writeToDom = (element, value, isTime) => {
         const el = document.querySelector(element);
         console.log(value.length);
