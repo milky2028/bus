@@ -1,12 +1,11 @@
 (function () {
     const writeToDom = (element, value, isTime) => {
         const el = document.querySelector(element);
-        console.log(value.length);
         if (isTime && isNaN(+value)) {
             el.style.fontSize = '10rem';
         }
         if (value.length > 5) {
-            el.style.fontSize = '7`rem';
+            el.style.fontSize = '7rem';
         }
         el.innerHTML = value;
     }
