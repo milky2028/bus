@@ -26,15 +26,6 @@
         ]
       },
       {
-        "source": "/index.html",
-        "headers": [
-          {
-            "key": "Link",
-            "value": "</js/app.js>;rel=preload;as=script,</styles/app.css>;rel=preload;as=style,</styles/loader.css>;rel=preload;as=style"
-          }
-        ]
-      },
-      {
         "source": "sw.js",
         "headers": [
           {
