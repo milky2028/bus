@@ -7,7 +7,7 @@
         if (element === '#time' && value.length > 5) {
             el.style.fontSize = '7rem';
         }
-        el.innerHTML = value;
+        el.textContent = value;
     }
 
     const unHide = (element) => {

@@ -11,7 +11,13 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.1.1/workbox-sw.js");
+
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
@@ -33,7 +39,7 @@ self.__precacheManifest = [
   },
   {
     "url": "js/app.js",
-    "revision": "92c121fbb4af33e4d99d3ceaa07cc47a"
+    "revision": "f3ccdc15a32a8618425f8faec2574a94"
   },
   {
     "url": "manifest.json",
@@ -48,5 +54,4 @@ self.__precacheManifest = [
     "revision": "86b2f50ad1bd8b564fd731dd28f96f34"
   }
 ].concat(self.__precacheManifest || []);
-workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
