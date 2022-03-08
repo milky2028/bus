@@ -20,19 +20,6 @@
     el.hidden = true;
   };
 
-  const parseDate = (date) => {
-    const reg = /(\d{4})(\d{2})(\d{2}) (\d{2}):(\d{2})/i;
-    const [, year, month, day, hour, minute] = reg.exec(date);
-    return new Date(+year, +month - 1, +day, +hour, +minute);
-  };
-
-  const convertDateToMinutes = (date) => {
-    const dtf = new Intl.DateTimeFormat("en-US", {
-      minute: "numeric",
-    });
-    return dtf.format(date);
-  };
-
   const minutesVsMinute = (input) => {
     return +input > 1 || +input === 0 ? "minutes" : "minute";
   };
@@ -53,17 +40,12 @@
           unHide("#time");
         } else {
           const prediction = json["bustime-response"].prd[0];
-          const minutesAgo = convertDateToMinutes(
-            new Date() - parseDate(prediction.tmstmp)
-          );
           const bigMinute = /due/i.test(prediction.prdctdn)
             ? "ma dude"
             : minutesVsMinute(+prediction.prdctdn);
+
           writeToDom("#time", prediction.prdctdn, true);
-          writeToDom("#timeChecked", minutesAgo, false);
-          writeToDom("#minutes", minutesVsMinute(+minutesAgo), false);
           writeToDom("#bigMinute", bigMinute, false);
-          unHide("#checked");
           unHide("#bigMinute");
           unHide("#time");
         }
